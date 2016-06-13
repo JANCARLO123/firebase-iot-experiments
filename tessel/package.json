@@ -1,0 +1,20 @@
+{
+  "name": "firebase-tessel-playground",
+  "version": "0.0.1",
+  "description": "Firebase Real-time database and Tessel 2 experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/ykro/firebase-tessel-experiments",
+  "keywords": [
+    "Tessel",
+    "Firebase"
+  ],
+  "license": "MIT",
+  "readme": "A bare bones Tessel 2 blinky script.",
+  "dependencies": {
+    "firebase": "^3.0.4",
+    "accel-mma84": "0.2.4"
+  }  
+}
