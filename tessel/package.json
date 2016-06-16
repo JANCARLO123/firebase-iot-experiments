@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/ykro/firebase-tessel-experiments",
+  "repository": "https://github.com/ykro/firebase-iot-experiments",
   "keywords": [
+    "IoT",
     "Tessel",
     "Firebase"
   ],
