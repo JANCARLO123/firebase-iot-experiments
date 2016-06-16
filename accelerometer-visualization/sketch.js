@@ -9,11 +9,21 @@ firebase.initializeApp(config);
 var x, y;
 var r, g, b;
 var prevX, prevY;
+var statusColor = 'white';
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
-   
-  var accelerometerDataRef = firebase.database().ref('accel');
+  
+  var statusDataRef = firebase.database().ref('accelerometer/enabled');
+  statusDataRef.on('value', function(snapshot) {
+    if (snapshot.val()) {
+      statusColor = 'green';
+    } else {
+      statusColor = 'red';
+    }
+  });
+
+  var accelerometerDataRef = firebase.database().ref('accelerometer/values');
   accelerometerDataRef.on('child_changed', function(snapshot) {    
     if (snapshot.key === 'x') {
       x = map(snapshot.val(), -1, 1, 0, displayWidth);
@@ -33,7 +43,7 @@ function draw() {
   rectMode(RADIUS);
   strokeWeight(0);
   rect(prevX, prevY, 30, 30);  
-  fill(255);    
+  fill(statusColor);    
   ellipse(x, y, 50, 50);  
   
   prevX = x;
